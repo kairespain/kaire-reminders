@@ -37,33 +37,31 @@ document
     };
 
     let recordatorios =
-    JSON.parse(localStorage.getItem("recordatorios")) || [];
+        JSON.parse(localStorage.getItem("recordatorios")) || [];
 
-// Guardar localmente
-recordatorios.push(recordatorio);
+    // Guardar localmente
+    recordatorios.push(recordatorio);
 
-localStorage.setItem(
-    "recordatorios",
-    JSON.stringify(recordatorios)
-);
+    localStorage.setItem(
+        "recordatorios",
+        JSON.stringify(recordatorios)
+    );
 
-// Enviar a Google Sheets
-fetch(
-    "https://script.google.com/macros/s/AKfycbzPVdPRuLFG7TFPdpSf_lGfx_oWG8ovaGn0eGRO-5_iViIFQxYOJtFAnO8PWO6mrtEm6g/exec",
-    {
-        method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify(recordatorio)
-    }
-)
-.then(() => {
-    console.log("Enviado a Apps Script");
-})
-.catch(error => {
-    console.error("Error:", error);
-});
-
-});
+    // Enviar a Google Sheets
+    fetch(
+        "https://script.google.com/macros/s/AKfycbzPVdPRuLFG7TFPdpSf_lGfx_oWG8ovaGn0eGRO-5_iViIFQxYOJtFAnO8PWO6mrtEm6g/exec",
+        {
+            method: "POST",
+            mode: "no-cors",
+            body: JSON.stringify(recordatorio)
+        }
+    )
+    .then(() => {
+        console.log("Enviado a Apps Script");
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 
     document.getElementById("titulo").value = "";
     document.getElementById("descripcion").value = "";
