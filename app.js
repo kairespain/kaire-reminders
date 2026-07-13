@@ -37,21 +37,33 @@ document
     };
 
     let recordatorios =
-        JSON.parse(localStorage.getItem("recordatorios")) || [];
+    JSON.parse(localStorage.getItem("recordatorios")) || [];
 
-    fetch(
+// Guardar localmente
+recordatorios.push(recordatorio);
+
+localStorage.setItem(
+    "recordatorios",
+    JSON.stringify(recordatorios)
+);
+
+// Enviar a Google Sheets
+fetch(
     "https://script.google.com/macros/s/AKfycbzPVdPRuLFG7TFPdpSf_lGfx_oWG8ovaGn0eGRO-5_iViIFQxYOJtFAnO8PWO6mrtEm6g/exec",
     {
         method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify(recordatorio)
     }
 )
 .then(response => response.text())
 .then(data => {
-    console.log(data);
+    console.log("Guardado en Sheets:", data);
 })
 .catch(error => {
-    console.error(error);
+    console.error("Error:", error);
 });
 
     document.getElementById("titulo").value = "";
