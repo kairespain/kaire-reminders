@@ -39,12 +39,20 @@ document
     let recordatorios =
         JSON.parse(localStorage.getItem("recordatorios")) || [];
 
-    recordatorios.push(recordatorio);
-
-    localStorage.setItem(
-        "recordatorios",
-        JSON.stringify(recordatorios)
-    );
+    fetch(
+    "https://script.google.com/macros/s/AKfycbzPVdPRuLFG7TFPdpSf_lGfx_oWG8ovaGn0eGRO-5_iViIFQxYOJtFAnO8PWO6mrtEm6g/exec",
+    {
+        method: "POST",
+        body: JSON.stringify(recordatorio)
+    }
+)
+.then(response => response.text())
+.then(data => {
+    console.log(data);
+})
+.catch(error => {
+    console.error(error);
+});
 
     document.getElementById("titulo").value = "";
     document.getElementById("descripcion").value = "";
