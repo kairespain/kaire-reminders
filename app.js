@@ -52,18 +52,17 @@ fetch(
     "https://script.google.com/macros/s/AKfycbzPVdPRuLFG7TFPdpSf_lGfx_oWG8ovaGn0eGRO-5_iViIFQxYOJtFAnO8PWO6mrtEm6g/exec",
     {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        mode: "no-cors",
         body: JSON.stringify(recordatorio)
     }
 )
-.then(response => response.text())
-.then(data => {
-    console.log("Guardado en Sheets:", data);
+.then(() => {
+    console.log("Enviado a Apps Script");
 })
 .catch(error => {
     console.error("Error:", error);
+});
+
 });
 
     document.getElementById("titulo").value = "";
