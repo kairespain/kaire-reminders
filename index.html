@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairé Recordatorios</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <img
+        src="img/logo.png"
+        alt="Kairé"
+        class="logo">
+
+    <h1>Kairé</h1>
+
+    <p class="subtitulo">
+        Gestor de recordatorios
+    </p>
+
+    <div class="card">
+
+        <label>Título</label>
+        <input
+            id="titulo"
+            type="text"
+            placeholder="Ej. Publicar mensaje en WhatsApp">
+
+        <label>Descripción</label>
+        <textarea
+            id="descripcion"
+            placeholder="Escribe aquí los detalles del recordatorio"></textarea>
+
+        <label>Categoría</label>
+
+        <select id="categoria">
+            <option value="🔵 Post">🔵 Post</option>
+            <option value="🟡 Reel">🟡 Reel</option>
+            <option value="🟢 WhatsApp">🟢 WhatsApp</option>
+            <option value="🟠️ Entrada de blog">🟠️ Entrada de blog</option>
+            <option value="🟤 Historia">🟤 Historia</option>
+            <option value="🔴 Video">🔴 Video</option>
+            <option value="📌 Otro">📌 Otro</option>
+        </select>
+
+        <label>Fecha y hora</label>
+        <input
+            id="fecha"
+            type="datetime-local">
+
+        <button id="guardar">
+    Guardar recordatorio
+            </button>
+
+        <h2 class="titulo-lista">Mis recordatorios</h2>
+
+            <div id="lista-recordatorios"></div>
+
+        </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
