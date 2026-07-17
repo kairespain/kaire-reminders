@@ -38,11 +38,11 @@ document
         fecha
     };
 
-    fetch(URL,{
-        method:"POST",
-        body:JSON.stringify(recordatorio)
-    })
-    .then(r => r.json())
+fetch(URL,{
+    method:"POST",
+    body:JSON.stringify(recordatorio)
+})
+.then(r => r.text())
     .then(() => {
 
         console.log("Enviado a Apps Script");
