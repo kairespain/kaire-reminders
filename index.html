@@ -25,45 +25,75 @@
         Gestor de recordatorios
     </p>
 
-    <div class="card">
+<div class="card">
 
-        <label>Título</label>
-        <input
-            id="titulo"
-            type="text"
-            placeholder="Ej. Publicar mensaje en WhatsApp">
+    <label>Título</label>
+    <input
+        id="titulo"
+        type="text"
+        placeholder="Ej. Publicar mensaje en WhatsApp">
 
-        <label>Descripción</label>
-        <textarea
-            id="descripcion"
-            placeholder="Escribe aquí los detalles del recordatorio"></textarea>
+    <label>Descripción</label>
+    <textarea
+        id="descripcion"
+        placeholder="Escribe aquí los detalles del recordatorio"></textarea>
 
-        <label>Categoría</label>
+    <label>Categoría</label>
 
-        <select id="categoria">
-            <option value="🔵 Post">🔵 Post</option>
-            <option value="🟡 Reel">🟡 Reel</option>
-            <option value="🟢 WhatsApp">🟢 WhatsApp</option>
-            <option value="🟠️ Entrada de blog">🟠️ Entrada de blog</option>
-            <option value="🟤 Historia">🟤 Historia</option>
-            <option value="🔴 Video">🔴 Video</option>
-            <option value="📌 Otro">📌 Otro</option>
-        </select>
+    <select id="categoria">
+        <option value="🔵 Post">🔵 Post</option>
+        <option value="🟡 Reel">🟡 Reel</option>
+        <option value="🟢 WhatsApp">🟢 WhatsApp</option>
+        <option value="🟠 Entrada de blog">🟠 Entrada de blog</option>
+        <option value="🟤 Historia">🟤 Historia</option>
+        <option value="🔴 Video">🔴 Video</option>
+        <option value="📌 Otro">📌 Otro</option>
+    </select>
 
-        <label>Fecha y hora</label>
-        <input
-            id="fecha"
-            type="datetime-local">
+    <label>Prioridad</label>
 
-        <button id="guardar">
-    Guardar recordatorio
-            </button>
+    <select id="prioridad">
+        <option value="Baja">🟢 Baja</option>
+        <option value="Media">🟡 Media</option>
+        <option value="Alta">🔴 Alta</option>
+    </select>
 
-        <h2 class="titulo-lista">Mis recordatorios</h2>
+    <label>Enlace (opcional)</label>
 
-            <div id="lista-recordatorios"></div>
+    <input
+        id="enlace"
+        type="url"
+        placeholder="https://...">
 
-        </div>
+    <label>Imagen</label>
+
+    <input
+        id="imagen"
+        type="file"
+        accept="image/*">
+
+    <img
+        id="preview"
+        class="miniatura"
+        style="display:none;">
+
+    <label>Fecha y hora</label>
+
+    <input
+        id="fecha"
+        type="datetime-local">
+
+    <button id="guardar">
+        Guardar recordatorio
+    </button>
+
+    <h2 class="titulo-lista">
+        Mis recordatorios
+    </h2>
+
+    <div id="lista-recordatorios"></div>
+
+</div>
 
 </div>
 
