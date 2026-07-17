@@ -129,7 +129,7 @@ button:hover{
     border-radius:20px;
     font-size:13px;
     color:white;
-    font-weight:bold;
+    font-weight:bold;    
 }
 
 .post{
@@ -159,4 +159,45 @@ button:hover{
 
 .otro{
     background: #901e2e;
+}
+
+.miniatura{
+    width:100%;
+    max-width:250px;
+    border-radius:12px;
+    margin-top:10px;
+    display:block;
+}
+
+.prioridad-alta{
+    color:#d32f2f;
+    font-weight:bold;
+}
+
+.prioridad-media{
+    color:#f57c00;
+    font-weight:bold;
+}
+
+.prioridad-baja{
+    color:#388e3c;
+    font-weight:bold;
+}
+
+.link-publicacion{
+    display:inline-block;
+    margin-top:8px;
+    color:#1565c0;
+    text-decoration:none;
+    word-break:break-all;
+}
+
+.link-publicacion:hover{
+    text-decoration:underline;
+}
+
+.recordatorio img{
+    margin-top:10px;
+    max-width:250px;
+    border-radius:12px;
 }
