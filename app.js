@@ -17,6 +17,9 @@ document
     const descripcion =
         document.getElementById("descripcion").value;
 
+    const foto =
+        document.getElementById("foto").value;
+
     const categoria =
         document.getElementById("categoria").value;
 
@@ -32,6 +35,7 @@ document
         id: Date.now(),
         titulo,
         descripcion,
+        foto,
         categoria,
         fecha
     };
@@ -60,6 +64,7 @@ document
 
         document.getElementById("titulo").value = "";
         document.getElementById("descripcion").value = "";
+        document.getElementById("foto").value = "";
         document.getElementById("fecha").value = "";
 
         cargarRecordatorios();
@@ -144,6 +149,8 @@ function cargarRecordatorios(){
                     </p>
 
                     <p>${r.descripcion}</p>
+
+                    <p>${r.foto}</p>
 
                     <p><strong>${fechaBonita}</strong></p>
 
